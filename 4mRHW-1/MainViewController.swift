@@ -87,7 +87,7 @@ class MainViewController: UIViewController {
     private var accountLabel5: UILabel = {
         let view = UILabel()
         view.text = "You Dont have an account?"
-        view.font = .systemFont(ofSize: 12, weight: .bold)
+        view.font = .systemFont(ofSize: 13, weight: .bold)
         view.font = .preferredFont(forTextStyle: .callout)
         view.textAlignment = .left
         //text color
