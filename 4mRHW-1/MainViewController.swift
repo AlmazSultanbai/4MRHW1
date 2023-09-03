@@ -346,7 +346,9 @@ class MainViewController: UIViewController {
 
 }
 extension UITextField {
+    
     func checkIsEmpty() -> Bool {
+        
         guard let text = self.text else {
             return false
         }
@@ -354,10 +356,26 @@ extension UITextField {
             
             self.placeholder = "fill the field"
             
+            self.layer.borderColor = UIColor.red.cgColor
+            self.layer.borderWidth = 1
+            
             return false
             
             
-        } else {
+        } else if self.text!.count < 10
+        { self.layer.borderColor = UIColor.red.cgColor
+            self.layer.borderWidth = 1
+            
+            return false}
+        else if !self.text!.starts(with: "+996")
+        { self.layer.borderColor = UIColor.red.cgColor
+            self.layer.borderWidth = 1
+            
+            return false}
+        else
+                    
+            
+        {self.layer.borderWidth = 0
             return true
         }
     }

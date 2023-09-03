@@ -42,11 +42,11 @@ private let tableView = UITableView()
 //
     }
     private func initData() {
-        contacts = [Contact(image: "Star", name: "Almaz", num: "+99670535345"),
-                    Contact(image: "Star", name: "Asel", num: "+99670535345"),
-                    Contact(image: "Star", name: "Nurlan", num: "+99670535345"),
-                    Contact(image: "Star", name: "Arsen", num: "+99670535345"),
-                    Contact(image: "Star", name: "Jamal", num: "+99670535345")]
+        contacts = [Contact(image: "star", name: "Almaz", num: "+99670535345"),
+                    Contact(image: "star", name: "Asel", num: "+99670535345"),
+                    Contact(image: "star", name: "Nurlan", num: "+99670535345"),
+                    Contact(image: "star", name: "Arsen", num: "+99670535345"),
+                    Contact(image: "star", name: "Jamal", num: "+99670535345")]
     }
 }
 extension ViewController: UITableViewDataSource {
@@ -57,6 +57,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         cell.textLabel?.text = contacts[indexPath.row].name
+        cell.imageView?.image = UIImage(systemName: contacts[indexPath.row].image)
         return cell
     }
 }
